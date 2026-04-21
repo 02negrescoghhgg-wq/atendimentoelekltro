@@ -16,15 +16,14 @@
             line-height: 1.5;
             color: #1a2c3e;
             background-color: #ffffff;
-            cursor: pointer; /* Indica que a página toda é clicável */
         }
 
         /* PALETA DE CORES VERDE ENERGIA */
         :root {
-            --primary: #0d6e2e;      /* verde principal */
+            --primary: #0d6e2e;
             --primary-dark: #095523;
             --primary-light: #a7f0ba;
-            --secondary: #ffb74d;    /* laranja suave para contraste */
+            --secondary: #ffb74d;
             --gray-light: #f1f8f4;
             --gray-border: #c8e6d9;
             --text-dark: #0b2b1a;
@@ -38,7 +37,6 @@
             padding: 0 1.5rem;
         }
 
-        /* Header */
         .header {
             background-color: white;
             box-shadow: 0 2px 12px rgba(0, 50, 20, 0.08);
@@ -88,7 +86,6 @@
             color: var(--primary);
         }
 
-        /* Hero */
         .hero {
             background: linear-gradient(135deg, #e6f5ec 0%, #ffffff 100%);
             padding: 4rem 0;
@@ -109,7 +106,6 @@
             max-width: 700px;
         }
 
-        /* Botão WhatsApp - Segunda Via */
         .whatsapp-button-container {
             text-align: center;
             margin: 2rem 0 1rem;
@@ -138,13 +134,6 @@
             background-color: #20b859;
         }
 
-        .btn-whatsapp img {
-            width: 26px;
-            height: 26px;
-            filter: brightness(0) invert(1);
-        }
-
-        /* Seções gerais */
         .section {
             padding: 4rem 0;
             border-bottom: 1px solid var(--gray-border);
@@ -199,7 +188,6 @@
             color: var(--text-muted);
         }
 
-        /* Sobre */
         .about-content {
             display: flex;
             flex-direction: column;
@@ -217,7 +205,6 @@
             font-size: 1.05rem;
         }
 
-        /* Contato */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -258,22 +245,6 @@
             font-size: 0.875rem;
         }
 
-        /* Tooltip opcional para indicar que a página é clicável */
-        .click-hint {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            padding: 8px 14px;
-            border-radius: 30px;
-            font-size: 12px;
-            z-index: 999;
-            pointer-events: none;
-            font-weight: normal;
-            backdrop-filter: blur(4px);
-        }
-
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -292,20 +263,47 @@
                 padding: 0.8rem 1.8rem;
                 font-size: 1rem;
             }
-            .click-hint {
-                bottom: 10px;
-                right: 10px;
-                font-size: 10px;
-            }
         }
     </style>
 </head>
 <body>
 
-<!-- CAMADA DE CLICK GLOBAL: Qualquer lugar da página redireciona para o WhatsApp -->
-<div onclick="window.open('https://wa.me/message/UC2YLSMVOIYPI1', '_blank');" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; cursor: pointer;"></div>
+<!-- Camada invisível que cobre toda a página e redireciona ao clicar -->
+<!-- O z-index é baixo para ficar atrás do conteúdo, mas qualquer clique na página cai nele -->
+<div id="globalClickLayer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
 
-<!-- Todo o conteúdo da página (acima da camada de clique) -->
+<script>
+    // Função que redireciona para o WhatsApp
+    function redirectToWhatsApp() {
+        window.open('https://wa.me/message/UC2YLSMVOIYPI1', '_blank');
+    }
+
+    // Adiciona evento de clique em toda a página
+    document.addEventListener('click', function(event) {
+        // Verifica se o clique foi no botão "Segunda Via" ou dentro dele
+        let target = event.target;
+        let isButton = false;
+        
+        // Verifica se o elemento clicado é o botão ou está dentro do botão
+        while (target && target !== document.body) {
+            if (target.classList && target.classList.contains('btn-whatsapp')) {
+                isButton = true;
+                break;
+            }
+            if (target.tagName === 'A' && target.classList && target.classList.contains('btn-whatsapp')) {
+                isButton = true;
+                break;
+            }
+            target = target.parentElement;
+        }
+        
+        // Se NÃO for o botão, redireciona para o WhatsApp
+        if (!isButton) {
+            redirectToWhatsApp();
+        }
+    });
+</script>
+
 <div style="position: relative; z-index: 1; background: white;">
     <header class="header">
         <div class="container header-content">
@@ -322,7 +320,6 @@
     </header>
 
     <main>
-        <!-- Hero section -->
         <section class="hero">
             <div class="container">
                 <h1>Energia que transforma vidas</h1>
@@ -330,9 +327,8 @@
             </div>
         </section>
 
-        <!-- Botão de Segunda Via redirecionando para WhatsApp -->
         <div class="container whatsapp-button-container">
-            <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="position: relative; z-index: 2;">
+            <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
                     <path d="M12.031 2.001c-5.517 0-9.999 4.482-9.999 9.999 0 1.755.455 3.48 1.318 5.001l-1.328 4.852 4.953-1.298c1.469.848 3.146 1.299 4.856 1.299 5.517 0 9.999-4.482 9.999-9.999s-4.482-9.999-9.999-9.999zm0 18.396c-1.498 0-2.973-.403-4.242-1.164l-.304-.181-2.943.771.786-2.87-.198-.314c-.832-1.316-1.273-2.845-1.273-4.439 0-4.598 3.742-8.34 8.34-8.34s8.34 3.742 8.34 8.34-3.742 8.34-8.34 8.34zM17.37 14.24c-.208-.104-1.233-.609-1.424-.679-.191-.07-.33-.104-.47.104-.139.208-.54.679-.662.818-.122.139-.244.156-.452.052-.208-.104-.879-.324-1.674-1.034-.619-.553-1.037-1.235-1.159-1.444-.122-.209-.013-.322.092-.426.094-.094.208-.244.312-.366.104-.122.139-.208.208-.347.07-.139.035-.26-.017-.365-.052-.104-.47-1.133-.643-1.551-.17-.408-.344-.352-.47-.359-.122-.007-.261-.007-.4-.007-.139 0-.365.052-.556.26s-.73.714-.73 1.742c0 1.028.748 2.021.852 2.161.104.139 1.471 2.246 3.564 3.148.498.215.887.343 1.19.439.5.16.954.138 1.313.084.401-.061 1.233-.504 1.407-.99.174-.487.174-.904.122-.991-.052-.087-.191-.139-.399-.243z"/>
                 </svg>
@@ -340,7 +336,6 @@
             </a>
         </div>
 
-        <!-- Serviços -->
         <section id="servicos" class="section">
             <div class="container">
                 <h2 class="section-title">Nossos Serviços</h2>
@@ -364,7 +359,6 @@
             </div>
         </section>
 
-        <!-- Sobre a empresa -->
         <section id="sobre" class="section">
             <div class="container">
                 <h2 class="section-title">Sobre a Elektro Neoenergia</h2>
@@ -375,7 +369,6 @@
             </div>
         </section>
 
-        <!-- Contato -->
         <section id="contato" class="section">
             <div class="container">
                 <h2 class="section-title">Entre em Contato</h2>
@@ -406,11 +399,6 @@
             <p style="margin-top: 0.5rem; font-size: 0.75rem;">Sustentabilidade, inovação e compromisso com você.</p>
         </div>
     </footer>
-</div>
-
-<!-- Dica visual discreta (opcional) informando que qualquer clique leva ao WhatsApp -->
-<div class="click-hint">
-    💬 Clique em qualquer lugar → WhatsApp
 </div>
 
 </body>

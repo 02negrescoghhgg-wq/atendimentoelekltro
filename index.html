@@ -22,7 +22,6 @@
             color: #2c241a;
         }
 
-        /* Paleta inovadora: terracota + mostarda escura + verde garrafa */
         :root {
             --terracota: #c45c3b;
             --terracota-light: #e6a48b;
@@ -183,6 +182,15 @@
             border-left: 5px solid var(--mustard);
             border-radius: 1.2rem;
         }
+        .real-food-img {
+            height: 260px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .real-food-img:hover {
+            transform: scale(1.02);
+        }
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.4rem;
@@ -195,12 +203,10 @@
 </head>
 <body>
 
-<!-- Botão flutuante WhatsApp (simulação com telefone) -->
 <a href="tel:+555134838743" class="whatsapp-float" title="Ligar agora">
     <i class="fas fa-phone-alt"></i>
 </a>
 
-<!-- Navegação -->
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="#">Nik'os <span style="color: #c45c3b;">✦</span></a>
@@ -219,7 +225,6 @@
     </div>
 </nav>
 
-<!-- Hero / introdução com frase inovadora -->
 <section class="hero">
     <div class="container">
         <div class="row align-items-center g-5">
@@ -240,7 +245,7 @@
             </div>
             <div class="col-lg-5 text-center">
                 <div class="position-relative">
-                    <img src="https://placehold.co/600x500/FFF0E2/C45C3B?text=🍕+🥟+🍔&font=playfair" alt="imagem ilustrativa pastel e xis" class="img-fluid rounded-4 shadow-lg" style="object-fit: cover; max-height: 380px; width: 100%;">
+                    <img src="https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pizza deliciosa" class="img-fluid rounded-4 shadow-lg" style="object-fit: cover; max-height: 380px; width: 100%;">
                     <div class="position-absolute top-0 start-0 mt-3 ms-3 bg-white rounded-pill px-3 py-1 shadow-sm">
                         <i class="fas fa-star text-warning"></i> <span class="fw-bold">4.9 · mais de 500 avaliações</span>
                     </div>
@@ -250,7 +255,6 @@
     </div>
 </section>
 
-<!-- Seção frases inspiradoras e cores -->
 <section class="container my-5 pt-4">
     <div class="row text-center g-4">
         <div class="col-md-4">
@@ -277,7 +281,6 @@
     </div>
 </section>
 
-<!-- Diferenciais e itens principais (Cardápio em destaque) -->
 <section id="diferenciais" class="container my-5 py-3">
     <div class="text-center mb-5">
         <h2 class="section-title d-inline-block text-start">Nossas especialidades</h2>
@@ -317,12 +320,77 @@
     </div>
 </section>
 
-<!-- Seção de informações legais + CNPJ + fundação + situação cadastral -->
+<!-- GALERIA DE FOTOS REAIS DE PIZZAS, PASTÉIS E XIS -->
+<section class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block text-start">🍕 Fotos reais do nosso cardápio</h2>
+        <p class="mt-2 text-secondary">Pizzas, pasteis e xis que preparamos com muito amor</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                <img src="https://images.pexels.com/photos/4109130/pexels-photo-4109130.jpeg?auto=compress&cs=tinysrgb&w=600" class="real-food-img" alt="Pizza de pepperoni">
+                <div class="p-3 bg-white">
+                    <h5 class="fw-bold">🍕 Pizza Especial da Casa</h5>
+                    <p class="text-muted small">Molho artesanal, mussarela, pepperoni e azeitonas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                <img src="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=600" class="real-food-img" alt="Pastel frito crocante">
+                <div class="p-3 bg-white">
+                    <h5 class="fw-bold">🥟 Pastel Crocante</h5>
+                    <p class="text-muted small">Massa leve, recheio de carne com queijo e tempero Nik'os.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                <img src="https://images.pexels.com/photos/2983098/pexels-photo-2983098.jpeg?auto=compress&cs=tinysrgb&w=600" class="real-food-img" alt="Xis Gaúcho completo">
+                <div class="p-3 bg-white">
+                    <h5 class="fw-bold">🍔 Xis Gaúcho Supremo</h5>
+                    <p class="text-muted small">Pão macio, hambúrguer artesanal, queijo, bacon, saladinha e molho especial.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4 mt-2">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                <img src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=600" class="real-food-img" alt="Pizza marguerita">
+                <div class="p-3 bg-white">
+                    <h5 class="fw-bold">🍕 Pizza Marguerita Nik'os</h5>
+                    <p class="text-muted small">Manjericão fresco, tomates especiais e muito queijo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                <img src="https://images.pexels.com/photos/2715717/pexels-photo-2715717.jpeg?auto=compress&cs=tinysrgb&w=600" class="real-food-img" alt="Pastel doce de leite">
+                <div class="p-3 bg-white">
+                    <h5 class="fw-bold">🥟 Pastel Doce de Leite</h5>
+                    <p class="text-muted small">Finalização com canela e açúcar – sobremesa favorita.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                <img src="https://images.pexels.com/photos/1070614/pexels-photo-1070614.jpeg?auto=compress&cs=tinysrgb&w=600" class="real-food-img" alt="Combo de xis e batata">
+                <div class="p-3 bg-white">
+                    <h5 class="fw-bold">🍟 Combo Xis + Batata</h5>
+                    <p class="text-muted small">Acompanha batata frita sequinha e molho da casa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="bg-soft-pattern py-5">
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-lg-6">
-                <img src="https://placehold.co/600x400/F8EDE2/C45C3B?text=❤️+Nik'os+Family&font=poppins" class="img-fluid rounded-4 shadow" alt="equipe Nik'os">
+                <img src="https://images.pexels.com/photos/6263479/pexels-photo-6263479.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4 shadow" alt="Equipe Nik'os" style="height: 350px; object-fit: cover; width: 100%;">
             </div>
             <div class="col-lg-6">
                 <div class="info-highlight p-4 bg-white rounded-4 shadow-sm">
@@ -345,7 +413,6 @@
     </div>
 </section>
 
-<!-- Contato + Localização (cards integrados) -->
 <section id="contato" class="container my-5 pt-4">
     <div class="row g-5">
         <div class="col-md-6">
@@ -380,41 +447,6 @@
     </div>
 </section>
 
-<!-- Galeria de inspiração com imagens inovadoras e frases impactantes -->
-<section class="container my-5">
-    <div class="text-center mb-4">
-        <h2 class="section-title d-inline-block text-start">Momentos que aquecem o coração</h2>
-        <p class="text-secondary">Sabor, alegria e aquele xis de domingo com a família</p>
-    </div>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="position-relative overflow-hidden rounded-4 shadow-sm">
-                <img src="https://placehold.co/600x400/FAE3D4/C45C3B?text=🍕+Pizza+Especial&font=poppins" class="img-fluid w-100" style="height: 260px; object-fit: cover;" alt="pizza">
-                <div class="p-3 bg-white">
-                    <p class="fst-italic mb-0">"Melhor pastel da região, crocante e recheio caprichado!" — Cliente Fidelidade</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="position-relative overflow-hidden rounded-4 shadow-sm">
-                <img src="https://placehold.co/600x400/F5E7DC/E7B42C?text=🥟+Pastel+Crocante&font=poppins" class="img-fluid w-100" style="height: 260px; object-fit: cover;" alt="pastel">
-                <div class="p-3 bg-white">
-                    <p class="fst-italic mb-0">"Xis gigante e sabor inigualável. Nik'os é point obrigatório em Alvorada."</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="position-relative overflow-hidden rounded-4 shadow-sm">
-                <img src="https://placehold.co/600x400/EDE0D6/2F5D3A?text=🍔+Xis+Gaúcho&font=poppins" class="img-fluid w-100" style="height: 260px; object-fit: cover;" alt="xis">
-                <div class="p-3 bg-white">
-                    <p class="fst-italic mb-0">"Ambiente familiar, atendimento nota 10. Recomendo a todos!"</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Seção de valores + slogan final com ícones e frase inovadora -->
 <section class="py-5" style="background: linear-gradient(120deg, #f7efea, #fff5ec);">
     <div class="container text-center">
         <i class="fas fa-quote-right fa-3x mb-3 opacity-50" style="color: #c45c3b;"></i>
@@ -427,7 +459,6 @@
     </div>
 </section>
 
-<!-- Footer completo com dados e direitos -->
 <footer class="footer pt-5 pb-4">
     <div class="container">
         <div class="row gy-4">
@@ -460,7 +491,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // pequeno interação para suavidade nos links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');

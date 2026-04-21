@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Elektro Neoenergia | Energia que transforma vidas</title>
+    <title>Pastelaria & Xis Nik'os | Sabor que há 18 anos aquece Alvorada</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,374 +16,462 @@
         }
 
         body {
-            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            line-height: 1.5;
-            color: #1a2c3e;
-            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            background: #fefaf5;
+            scroll-behavior: smooth;
+            color: #2c241a;
         }
 
-        /* PALETA DE CORES VERDE ENERGIA */
+        /* Paleta inovadora: terracota + mostarda escura + verde garrafa */
         :root {
-            --primary: #0d6e2e;      /* verde principal */
-            --primary-dark: #095523;
-            --primary-light: #a7f0ba;
-            --secondary: #ffb74d;    /* laranja suave para contraste */
-            --gray-light: #f1f8f4;
-            --gray-border: #c8e6d9;
-            --text-dark: #0b2b1a;
-            --text-muted: #2c553a;
-            --whatsapp-green: #25D366;
+            --terracota: #c45c3b;
+            --terracota-light: #e6a48b;
+            --mustard: #e7b42c;
+            --dark-green: #2f5d3a;
+            --cream: #fff6ed;
+            --deep-charcoal: #2b2b28;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        .navbar {
+            background: rgba(255, 248, 240, 0.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            padding: 0.8rem 0;
         }
 
-        /* Header */
-        .header {
-            background-color: white;
-            box-shadow: 0 2px 12px rgba(0, 50, 20, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .logo {
+        .navbar-brand {
+            font-weight: 800;
             font-size: 1.6rem;
-            font-weight: 700;
             letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--terracota), var(--mustard));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
         }
 
-        .logo span:first-child {
-            color: var(--primary);
-        }
-
-        .logo span:last-child {
-            color: var(--secondary);
+        .nav-link {
             font-weight: 600;
+            color: #3e2c21 !important;
+            transition: 0.2s;
         }
 
-        .nav {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
+        .nav-link:hover {
+            color: var(--terracota) !important;
         }
 
-        .nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero */
         .hero {
-            background: linear-gradient(135deg, #e6f5ec 0%, #ffffff 100%);
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--gray-border);
+            background: linear-gradient(107deg, #fff2e6 0%, #fae9dd 100%);
+            padding: 5rem 0 4rem;
+            border-bottom-left-radius: 2.5rem;
+            border-bottom-right-radius: 2.5rem;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
+        .hero-title {
+            font-size: 3.3rem;
+            font-weight: 800;
             line-height: 1.2;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-weight: 700;
+            background: linear-gradient(130deg, #c45c3b, #e7b42c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 700px;
-        }
-
-        /* Botão WhatsApp - Segunda Via */
-        .whatsapp-button-container {
-            text-align: center;
-            margin: 2rem 0 1rem;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--whatsapp-green);
-            color: white;
+        .btn-order {
+            background: var(--terracota);
             border: none;
-            padding: 1rem 2.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 60px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            cursor: pointer;
+            padding: 12px 32px;
+            font-weight: 700;
+            border-radius: 50px;
+            color: white;
+            transition: all 0.2s;
+            box-shadow: 0 8px 18px rgba(196,92,59,0.3);
         }
 
-        .btn-whatsapp:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-            background-color: #20b859;
-        }
-
-        .btn-whatsapp img {
-            width: 26px;
-            height: 26px;
-            filter: brightness(0) invert(1);
-        }
-
-        /* Seções gerais */
-        .section {
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--gray-border);
-        }
-
-        .section:last-of-type {
-            border-bottom: none;
+        .btn-order:hover {
+            background: #b04c2f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(196,92,59,0.4);
+            color: white;
         }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-align: center;
-            margin-bottom: 2.5rem;
+            position: relative;
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: var(--deep-charcoal);
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--mustard);
+            margin-top: 10px;
+            border-radius: 4px;
         }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
+        .card-item {
+            border: none;
+            border-radius: 2rem;
             background: white;
-            border-radius: 1rem;
-            padding: 1.8rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid var(--gray-border);
-            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -12px rgba(13, 110, 46, 0.15);
-            border-color: var(--primary-light);
+        .card-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 40px rgba(0,0,0,0.12);
         }
-
-        .card-icon {
+        .icon-large {
             font-size: 2.8rem;
-            margin-bottom: 1rem;
+            color: var(--terracota);
         }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--primary);
-        }
-
-        .card p {
-            color: var(--text-muted);
-        }
-
-        /* Sobre */
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--gray-light);
-            padding: 2rem;
-            border-radius: 1.5rem;
-            color: var(--text-dark);
-            border-left: 5px solid var(--primary);
-        }
-
-        .about-content p {
-            font-size: 1.05rem;
-        }
-
-        /* Contato */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .contact-item {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.8rem;
-            border: 1px solid var(--gray-border);
-        }
-
-        .contact-item h4 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-item p {
-            margin: 0.5rem 0;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .contact-item .small {
+        .badge-years {
+            background: var(--dark-green);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 60px;
+            font-weight: 600;
             font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: normal;
         }
-
+        .info-card {
+            background: white;
+            border-radius: 2rem;
+            transition: 0.2s;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
         .footer {
-            background-color: #0b2b1a;
-            color: #cfe8d5;
-            text-align: center;
-            padding: 2rem 0;
-            font-size: 0.875rem;
+            background: #1e2a22;
+            color: #e7d9cf;
         }
-
+        .footer a {
+            color: #f3cf9a;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: 0.2s;
+        }
+        .whatsapp-float:hover {
+            background: #20b85f;
+            transform: scale(1.07);
+            color: white;
+        }
+        .bg-soft-pattern {
+            background-image: radial-gradient(circle at 10% 30%, rgba(231,180,44,0.08) 2%, transparent 2.5%);
+            background-size: 28px 28px;
+        }
+        .info-highlight {
+            background: rgba(47,93,58,0.05);
+            border-left: 5px solid var(--mustard);
+            border-radius: 1.2rem;
+        }
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero h1 {
-                font-size: 2rem;
+            .hero-title {
+                font-size: 2.4rem;
             }
             .section-title {
-                font-size: 1.7rem;
-            }
-            .container {
-                padding: 0 1rem;
-            }
-            .btn-whatsapp {
-                padding: 0.8rem 1.8rem;
-                font-size: 1rem;
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="container header-content">
-        <div class="logo">
-            <span>Elektro</span><span>Neoenergia</span>
-        </div>
-        <div class="nav">
-            <a href="#">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
-        </div>
-    </div>
-</header>
+<!-- Botão flutuante WhatsApp (simulação com telefone) -->
+<a href="tel:+555134838743" class="whatsapp-float" title="Ligar agora">
+    <i class="fas fa-phone-alt"></i>
+</a>
 
-<main>
-    <!-- Hero section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Energia que transforma vidas</h1>
-            <p>A Elektro Neoenergia está comprometida em fornecer energia de qualidade, sustentável e acessível para todos os nossos clientes.</p>
-        </div>
-    </section>
-
-    <!-- Botão de Segunda Via redirecionando para WhatsApp -->
-    <div class="container whatsapp-button-container">
-        <a href="https://wa.me/message/UC2YLSMVOIYPI1" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-            <!-- Ícone WhatsApp SVG inline -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                <path d="M12.031 2.001c-5.517 0-9.999 4.482-9.999 9.999 0 1.755.455 3.48 1.318 5.001l-1.328 4.852 4.953-1.298c1.469.848 3.146 1.299 4.856 1.299 5.517 0 9.999-4.482 9.999-9.999s-4.482-9.999-9.999-9.999zm0 18.396c-1.498 0-2.973-.403-4.242-1.164l-.304-.181-2.943.771.786-2.87-.198-.314c-.832-1.316-1.273-2.845-1.273-4.439 0-4.598 3.742-8.34 8.34-8.34s8.34 3.742 8.34 8.34-3.742 8.34-8.34 8.34zM17.37 14.24c-.208-.104-1.233-.609-1.424-.679-.191-.07-.33-.104-.47.104-.139.208-.54.679-.662.818-.122.139-.244.156-.452.052-.208-.104-.879-.324-1.674-1.034-.619-.553-1.037-1.235-1.159-1.444-.122-.209-.013-.322.092-.426.094-.094.208-.244.312-.366.104-.122.139-.208.208-.347.07-.139.035-.26-.017-.365-.052-.104-.47-1.133-.643-1.551-.17-.408-.344-.352-.47-.359-.122-.007-.261-.007-.4-.007-.139 0-.365.052-.556.26s-.73.714-.73 1.742c0 1.028.748 2.021.852 2.161.104.139 1.471 2.246 3.564 3.148.498.215.887.343 1.19.439.5.16.954.138 1.313.084.401-.061 1.233-.504 1.407-.99.174-.487.174-.904.122-.991-.052-.087-.191-.139-.399-.243z"/>
-            </svg>
-            Solicitar 2ª Via da Fatura pelo WhatsApp
-        </a>
-    </div>
-
-    <!-- Serviços -->
-    <section id="servicos" class="section">
-        <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Consulta de Consumo</h3>
-                    <p>Acompanhe o histórico de consumo da sua unidade e entenda melhor seus gastos com energia.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Religação de Energia</h3>
-                    <p>Solicite a religação da sua energia de forma rápida e segura através dos nossos canais digitais.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📧</div>
-                    <h3>Fatura Digital</h3>
-                    <p>Receba sua fatura por e-mail, contribua com o meio ambiente e tenha mais praticidade.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre a empresa -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <h2 class="section-title">Sobre a Elektro Neoenergia</h2>
-            <div class="about-content">
-                <p>A Elektro Neoenergia é uma das maiores distribuidoras de energia elétrica do Brasil, atendendo milhões de clientes em diversas regiões.</p>
-                <p>Com um compromisso firme com a sustentabilidade e a inovação, trabalhamos para garantir um fornecimento de energia confiável e de qualidade, contribuindo para o desenvolvimento das comunidades onde atuamos.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="section">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h4>📞 Telefone</h4>
-                    <p>Atendimento 24h</p>
-                    <p><strong>0800 123 4567</strong></p>
-                </div>
-                <div class="contact-item">
-                    <h4>✉️ E-mail</h4>
-                    <p>Resposta em até 48h</p>
-                    <p><strong>contato@elektro.com.br</strong></p>
-                </div>
-                <div class="contact-item">
-                    <h4>📍 Endereço</h4>
-                    <p>Escritório Central</p>
-                    <p><strong>Av. Paulista, 1000 - São Paulo/SP</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
+<!-- Navegação -->
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <p>© 2025 Elektro Neoenergia – Energia que transforma vidas.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.75rem;">Sustentabilidade, inovação e compromisso com você.</p>
+        <a class="navbar-brand" href="#">Nik'os <span style="color: #c45c3b;">✦</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sabor Nik'os</a></li>
+                <li class="nav-item"><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+            </ul>
+            <a href="#contato" class="btn btn-order ms-lg-3">Peça já <i class="fas fa-arrow-right ms-1"></i></a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero / introdução com frase inovadora -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge-years mb-3 d-inline-flex align-items-center gap-2">
+                    <i class="fas fa-calendar-alt"></i> Desde 2007 · 18 anos de tradição
+                </span>
+                <h1 class="hero-title mt-2">O sabor que conecta <br>Alvorada há 18 anos</h1>
+                <p class="lead mt-3 text-secondary">Pastel crocante, xis gigante e pizza de dar água na boca. 
+                Feito com paixão e ingredientes selecionados. Seu momento especial começa aqui.</p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="#diferenciais" class="btn btn-outline-secondary rounded-pill px-4 py-2">Descubra o cardápio <i class="fas fa-chevron-right ms-1"></i></a>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-terracota" style="color: var(--terracota);"></i>
+                        <span><strong>Bela Vista</strong> · Alvorada/RS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <div class="position-relative">
+                    <img src="https://placehold.co/600x500/FFF0E2/C45C3B?text=🍕+🥟+🍔&font=playfair" alt="imagem ilustrativa pastel e xis" class="img-fluid rounded-4 shadow-lg" style="object-fit: cover; max-height: 380px; width: 100%;">
+                    <div class="position-absolute top-0 start-0 mt-3 ms-3 bg-white rounded-pill px-3 py-1 shadow-sm">
+                        <i class="fas fa-star text-warning"></i> <span class="fw-bold">4.9 · mais de 500 avaliações</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção frases inspiradoras e cores -->
+<section class="container my-5 pt-4">
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 bg-white shadow-sm h-100 border-0">
+                <i class="fas fa-drumstick-bite icon-large mb-3"></i>
+                <h5 class="fw-bold">Ingredientes selecionados</h5>
+                <p class="text-muted">Massas artesanais, carnes nobres e vegetais frescos, tudo para garantir o melhor sabor.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 bg-white shadow-sm h-100 border-0">
+                <i class="fas fa-clock icon-large mb-3"></i>
+                <h5 class="fw-bold">Tradição que inspira</h5>
+                <p class="text-muted">Mais de 18 anos de histórias e receitas que conquistam corações no RS.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 bg-white shadow-sm h-100 border-0">
+                <i class="fas fa-hand-peace icon-large mb-3"></i>
+                <h5 class="fw-bold">Atendimento acolhedor</h5>
+                <p class="text-muted">Ambiente familiar, delivery rápido e aquele carinho que só a Nik'os tem.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Diferenciais e itens principais (Cardápio em destaque) -->
+<section id="diferenciais" class="container my-5 py-3">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block text-start">Nossas especialidades</h2>
+        <p class="mt-2 text-secondary">Sabores que marcam encontros · Peça já o seu favorito</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card-item p-4 h-100">
+                <div class="text-center">
+                    <i class="fas fa-pizza-slice" style="font-size: 3rem; color: #c45c3b;"></i>
+                    <h4 class="fw-bold mt-3">Pizzas Nik'os</h4>
+                    <p>Massa fina e crocante, borda recheada e sabores exclusivos. Destaque para a portuguesa e a nik'os especial.</p>
+                    <span class="badge bg-warning text-dark">Mais pedida</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-item p-4 h-100">
+                <div class="text-center">
+                    <i class="fas fa-egg" style="font-size: 3rem; color: #e7b42c;"></i>
+                    <h4 class="fw-bold mt-3">Pastéis artesanais</h4>
+                    <p>Pastéis de carne, queijo, pizza, palmito e doce de leite. Massa leve e sequinha, feita na hora.</p>
+                    <span class="badge bg-terracota" style="background: #c45c3b;">Crocância única</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-item p-4 h-100">
+                <div class="text-center">
+                    <i class="fas fa-hamburger" style="font-size: 3rem; color: #2f5d3a;"></i>
+                    <h4 class="fw-bold mt-3">Xis Gaúcho</h4>
+                    <p>Xis coração, xis salada, xis bacon com muito catupiry. O verdadeiro xis da região metropolitana.</p>
+                    <span class="badge bg-dark">Tamanho família</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de informações legais + CNPJ + fundação + situação cadastral -->
+<section class="bg-soft-pattern py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <img src="https://placehold.co/600x400/F8EDE2/C45C3B?text=❤️+Nik'os+Family&font=poppins" class="img-fluid rounded-4 shadow" alt="equipe Nik'os">
+            </div>
+            <div class="col-lg-6">
+                <div class="info-highlight p-4 bg-white rounded-4 shadow-sm">
+                    <h3 class="fw-bold"><i class="fas fa-building me-2" style="color: var(--terracota);"></i> Solidez e tradição</h3>
+                    <p class="mt-2"><strong>Razão Social:</strong> Pizzaria, Pastelaria e Xis Nik'os LTDA</p>
+                    <p><strong>Nome Fantasia:</strong> Pastelaria e Xis Nik'os</p>
+                    <p><strong>CNPJ:</strong> 08.970.664/0001-95</p>
+                    <p><strong>Inscrição Estadual (RS):</strong> 165/0140948</p>
+                    <p><strong>Data de Abertura:</strong> 16 de julho de 2007 — <span class="fw-bold text-success">18 anos, 9 meses e 5 dias de história</span></p>
+                    <p><strong>Situação Cadastral:</strong> <span class="badge bg-success">ATIVA ✓</span></p>
+                    <p><strong>CNAE Principal:</strong> 56.11-2-03 - Lanchonetes, casas de chá, de sucos e similares</p>
+                    <hr>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <span><i class="fas fa-check-circle text-terracota"></i> Estabelecimento regular</span>
+                        <span><i class="fas fa-trophy text-terracota"></i> 18 anos alimentando sonhos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contato + Localização (cards integrados) -->
+<section id="contato" class="container my-5 pt-4">
+    <div class="row g-5">
+        <div class="col-md-6">
+            <div class="info-card p-4">
+                <h3 class="fw-bold"><i class="fas fa-phone-alt me-2" style="color: var(--terracota);"></i> Fale com a Nik'os</h3>
+                <p class="mt-3">Pronto para pedir? Ligue ou passe para retirar. Delivery rápido e área de retirada.</p>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-3"><i class="fas fa-phone me-3 fa-fw text-terracota"></i> <strong>(51) 3483-8743</strong> <span class="text-muted">(Ligar)</span></li>
+                    <li class="mb-3"><i class="fab fa-whatsapp me-3 fa-fw text-success"></i> WhatsApp: (51) 9 9999-8743 <span class="small text-muted">(simulação)</span></li>
+                    <li class="mb-3"><i class="far fa-clock me-3 fa-fw text-terracota"></i> Horário: Terça a Domingo das 18h às 23h30</li>
+                </ul>
+                <a href="tel:+555134838743" class="btn btn-order w-100 mt-2"><i class="fas fa-phone-alt me-2"></i> Ligar agora</a>
+            </div>
+        </div>
+        <div id="localizacao" class="col-md-6">
+            <div class="info-card p-4">
+                <h3 class="fw-bold"><i class="fas fa-location-dot me-2" style="color: var(--terracota);"></i> Onde estamos</h3>
+                <address class="mt-3">
+                    <strong>Avenida Frederico Dihl, 4139</strong><br>
+                    Bairro Bela Vista · CEP: 94853-250<br>
+                    Alvorada, Rio Grande do Sul<br><br>
+                    <strong>Para correspondência:</strong><br>
+                    Pastelaria e Xis Nik'os LTDA<br>
+                    Av. Frederico Dihl, 4139 - Bela Vista<br>
+                    Alvorada/RS - CEP 94853-250
+                </address>
+                <div class="mt-2">
+                    <a href="https://maps.google.com/?q=Av.+Frederico+Dihl,+4139,+Alvorada+RS" target="_blank" class="btn btn-outline-secondary rounded-pill"><i class="fas fa-map-marked-alt me-1"></i> Ver rota no Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Galeria de inspiração com imagens inovadoras e frases impactantes -->
+<section class="container my-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title d-inline-block text-start">Momentos que aquecem o coração</h2>
+        <p class="text-secondary">Sabor, alegria e aquele xis de domingo com a família</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="position-relative overflow-hidden rounded-4 shadow-sm">
+                <img src="https://placehold.co/600x400/FAE3D4/C45C3B?text=🍕+Pizza+Especial&font=poppins" class="img-fluid w-100" style="height: 260px; object-fit: cover;" alt="pizza">
+                <div class="p-3 bg-white">
+                    <p class="fst-italic mb-0">"Melhor pastel da região, crocante e recheio caprichado!" — Cliente Fidelidade</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="position-relative overflow-hidden rounded-4 shadow-sm">
+                <img src="https://placehold.co/600x400/F5E7DC/E7B42C?text=🥟+Pastel+Crocante&font=poppins" class="img-fluid w-100" style="height: 260px; object-fit: cover;" alt="pastel">
+                <div class="p-3 bg-white">
+                    <p class="fst-italic mb-0">"Xis gigante e sabor inigualável. Nik'os é point obrigatório em Alvorada."</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="position-relative overflow-hidden rounded-4 shadow-sm">
+                <img src="https://placehold.co/600x400/EDE0D6/2F5D3A?text=🍔+Xis+Gaúcho&font=poppins" class="img-fluid w-100" style="height: 260px; object-fit: cover;" alt="xis">
+                <div class="p-3 bg-white">
+                    <p class="fst-italic mb-0">"Ambiente familiar, atendimento nota 10. Recomendo a todos!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de valores + slogan final com ícones e frase inovadora -->
+<section class="py-5" style="background: linear-gradient(120deg, #f7efea, #fff5ec);">
+    <div class="container text-center">
+        <i class="fas fa-quote-right fa-3x mb-3 opacity-50" style="color: #c45c3b;"></i>
+        <p class="display-6 fw-semibold" style="font-size: 1.9rem;">“Tradição que se renova a cada sabor. <br>Na Nik'os, cada mordida é uma história.”</p>
+        <div class="d-flex justify-content-center gap-4 mt-4 flex-wrap">
+            <div><i class="fas fa-award me-2" style="color: var(--mustard);"></i> Qualidade premiada</div>
+            <div><i class="fas fa-leaf me-2" style="color: var(--dark-green);"></i> Ingredientes frescos</div>
+            <div><i class="fas fa-heart me-2" style="color: #c45c3b;"></i> Amor em cada receita</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer completo com dados e direitos -->
+<footer class="footer pt-5 pb-4">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-5">
+                <h4 class="fw-bold text-white">Pastelaria & Xis Nik'os</h4>
+                <p>Desde 2007 levando o melhor da culinária de lanches para Alvorada e região. CNPJ: 08.970.664/0001-95</p>
+                <div class="d-flex gap-3">
+                    <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5 class="fw-semibold">Contato rápido</h5>
+                <p><i class="fas fa-phone me-2"></i> (51) 3483-8743<br>
+                <i class="fas fa-envelope me-2"></i> contato@nikos.com.br (exemplo)</p>
+                <p><i class="fas fa-clock me-2"></i> Horário: 18h às 23h30 (ter-dom)</p>
+            </div>
+            <div class="col-md-3">
+                <h5 class="fw-semibold">Endereço</h5>
+                <p>Av. Frederico Dihl, 4139 - Bela Vista<br>Alvorada - RS, 94853-250<br>Brasil</p>
+            </div>
+        </div>
+        <hr class="mt-4 opacity-25">
+        <div class="text-center pt-2 small">
+            &copy; 2026 Pastelaria e Xis Nik'os LTDA | Todos os direitos reservados | Situação cadastral: ATIVA | CNAE 56.11-2-03
+        </div>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // pequeno interação para suavidade nos links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
 </body>
 </html>
